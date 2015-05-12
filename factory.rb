@@ -68,6 +68,10 @@ class ShapeFactory
   def self.get_shape shape_name
     SHAPES[shape_name].new
   end
+
+  def self.random_shape
+    SHAPES.values.sample.new
+  end
 end
 
 gets
@@ -86,3 +90,9 @@ gets
 puts "smiley face"
 smiley_face = ShapeFactory.get_shape :smiley_face
 smiley_face.draw_me
+
+cmd = gets
+while cmd == "\n"
+  ShapeFactory.random_shape.draw_me
+  cmd = gets
+end
