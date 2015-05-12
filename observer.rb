@@ -30,6 +30,14 @@ end
 class Minion
   attr_accessor :evil_genius
 
+  def perform_heist
+    profit = rand(-250_000..250_000)
+
+    did_i_win profit
+
+    evil_genius.inform(profit)
+  end
+
   def did_i_win profit
     if profit > 0
       puts "Yaaaay!"
@@ -44,14 +52,6 @@ class Minion
 
   def celebrate
     puts ['Yaaay', 'Woohoo', 'Yuss'].sample
-  end
-
-  def perform_heist
-    profit = rand(-250_000..250_000)
-
-    did_i_win profit
-
-    evil_genius.inform(profit)
   end
 end
 
