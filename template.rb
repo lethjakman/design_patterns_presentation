@@ -92,3 +92,11 @@ class PlainTextInvoice < Invoice
     add_to_invoice "*********************"
   end
 end
+
+gets
+html_invoice = HtmlInvoice.new price: 1000000, title: 'Alex LLC'
+puts html_invoice.invoice
+
+gets
+text_invoice = HtmlInvoice.new price: 1000000, title: 'Alex LLC'
+puts text_invoice.invoice
