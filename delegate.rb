@@ -1,6 +1,6 @@
 class Invoice
   def initialize args
-    @processor = payment_processors[args[:payment_type]].new # EG. Credit card, Cash
+    @processor = payment_processors[args[:payment_type]].new # EG. Credit card, Cash, Check
     @processor.payment_details = args[:payment_details] if args[:payment_details] # EG. CC_NUM
     @amount = args[:amount]
   end
