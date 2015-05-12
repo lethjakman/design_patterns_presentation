@@ -12,7 +12,7 @@ class EvilGenius
     @minions << minion
   end
 
-  def inform profit
+  def inform profit # NOTE PUBLIC
     @money += profit
   end
 
