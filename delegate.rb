@@ -53,6 +53,34 @@ class Invoice::Cash
   end
 end
 
-cc_invoice = Invoice.new payment_type: :credit_card, amount: 100, payment_details: {cc_number: 12345, cc_expire: '11/11', cc_name: 'John Smith'}
-check_invoice = Invoice.new payment_type: :check, amount: 100, payment_details: {cc_number: 12345, cc_expire: '11/11', cc_name: 'John Smith'}
+
+gets
+puts "Credit Card"
+cc_invoice = Invoice.new(
+  payment_type: :credit_card,
+  amount: 100,
+  payment_details: {
+    cc_number: 12345,
+    cc_expire: '11/11',
+    cc_name: 'John Smith'
+  }
+)
+cc_invoice.process_payment
+
+gets
+check_invoice = Invoice.new(
+  payment_type: :check,
+  amount: 100,
+  payment_details: {
+    cc_number: 12345,
+    cc_expire: '11/11',
+    cc_name: 'John Smith'
+  }
+)
+check_invoice.process_payment
+
+gets
 cash_invoice = Invoice.new payment_type: :cash, amount: 100
+cash_invoice.process_payment
+
+gets
