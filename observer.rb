@@ -59,12 +59,16 @@ gru = EvilGenius.new
 
 5.times { gru.add_minion }
 
-puts
-puts "Perform Heists!"
-gru.minions.each do |minion|
-  minion.perform_heist
-end
+cmd = gets
+while cmd == "\n"
+  puts
+  puts "Perform Heists!"
+  gru.minions.each do |minion|
+    minion.perform_heist
+  end
 
-puts
-puts "Announce results:"
-gru.final_results
+  puts
+  puts "Announce results:"
+  gru.final_results
+  cmd = gets
+end
