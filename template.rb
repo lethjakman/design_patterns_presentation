@@ -93,10 +93,14 @@ class PlainTextInvoice < Invoice
   end
 end
 
+invoice_details = {price: 1000000, title: 'Alex LLC'}
+
 gets
-html_invoice = HtmlInvoice.new price: 1000000, title: 'Alex LLC'
+html_invoice = HtmlInvoice.new invoice_details
+html_invoice.generate_invoice
 puts html_invoice.invoice
 
 gets
-text_invoice = HtmlInvoice.new price: 1000000, title: 'Alex LLC'
+text_invoice = PlainTextInvoice.new invoice_details
+text_invoice.generate_invoice
 puts text_invoice.invoice
