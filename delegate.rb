@@ -16,12 +16,6 @@ class Invoice
   def process_payment
     @processor.take_payment(@amount)
   end
-
-  def payment_processor type
-    payment_types =
-
-    payment_types[type]
-  end
 end
 
 class Invoice::CreditCard
